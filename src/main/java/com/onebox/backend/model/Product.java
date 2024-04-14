@@ -4,6 +4,11 @@ import com.onebox.backend.utils.enums.ProductEnum;
 
 import lombok.ToString;
 
+/**
+ * @author Guillermo Román
+ * @version 1.0
+ * @Description Product model.
+ */
 @ToString
 public class Product {
 
@@ -11,7 +16,7 @@ public class Product {
     private String description;
     private int amount;
 
-    // Constructor (optional)
+    // Constructor
     public Product(int id, int amount) {
         this.id = id;
         this.description = ProductEnum.getById(id).getDescription();

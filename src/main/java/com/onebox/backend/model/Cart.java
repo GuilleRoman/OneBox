@@ -7,6 +7,11 @@ import java.util.List;
 
 import lombok.ToString;
 
+/**
+ * @author Guillermo Román
+ * @version 1.0
+ * @Description Shopping Cart model.
+ */
 @ToString
 public class Cart {
     private int id;
@@ -14,21 +19,21 @@ public class Cart {
     private String createdTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
             .format(new Date(System.currentTimeMillis()));
 
+    /**
+     * Creates a new cart with the id provided.
+     * 
+     * @param cartIdCounter the current counter integer for the new cart.
+     */
     public Cart(int cartIdCounter) {
         this.id = cartIdCounter;
     }
 
-    // Methods to add/remove products, check cart expiration
+    // Getter methods
+
     public List<Product> getProducts() {
         return this.products;
     }
 
-    public void addProducts(Product product) {
-        this.products.add(product);
-
-    }
-
-    // Getters
     public int getId() {
         return id;
     }
@@ -37,7 +42,7 @@ public class Cart {
         return createdTime;
     }
 
-    // Setters (optional, might not be needed for in-memory storage)
+    // Setter methods
     public void setId(int id) {
         this.id = id;
     }
@@ -48,5 +53,15 @@ public class Cart {
 
     public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
+    }
+
+    /**
+     * Adds a product to the cart
+     * 
+     * @param product the product that will be added to the cart.
+     */
+    public void addProducts(Product product) {
+        this.products.add(product);
+
     }
 }
